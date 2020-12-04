@@ -7,7 +7,7 @@ spec:
   triggers:
   - type: git
     provider: github
-    context: devops-catalog
+    context: github
     name: master
     repo: CHANGE_ME_REPO
     events:
@@ -15,8 +15,6 @@ spec:
     pullRequestAllowForkEvents: true
     branchRegex: /^((master)$).*/gi
     verified: true
-  contexts:
-    - dc
   stages:
     - release
     - deploy
@@ -26,7 +24,7 @@ spec:
       type: git-clone
       arguments:
         repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
-        git: devops-catalog
+        git: github
         revision: "${{CF_BRANCH}}"
       stage: release
     build_app:
@@ -50,7 +48,7 @@ spec:
       type: git-clone
       arguments:
         repo: CHANGE_ME_PROD_REPO
-        git: devops-catalog
+        git: github
       stage: deploy
     define_production:
       image: vfarcic/argocd-pipeline:1.0.ee76b7a
@@ -67,7 +65,7 @@ spec:
       type: git-commit
       arguments:
         repo: vfarcic/argocd-production
-        git: devops-catalog
+        git: github
         commit_message: "Adding commit ${{CF_SHORT_REVISION}} from ${{CF_REPO_NAME}}"
         git_user_name: "${{CF_COMMIT_AUTHOR}}"
         working_directory: /codefresh/volume/argocd-production
