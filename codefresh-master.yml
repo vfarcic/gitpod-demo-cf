@@ -31,7 +31,7 @@ spec:
       title: Building Hugo
       image: klakegg/hugo:0.75.1-ext-alpine
       commands:
-      - ./build.sh
+      - make build
       - cf_export REPO_PATH=$PWD
       stage: release
     build_image:
