@@ -64,11 +64,11 @@ spec:
       title: Push production env. changes
       type: git-commit
       arguments:
-        repo: vfarcic/argocd-production
+        repo: CHANGE_ME_PROD_REPO
         git: github
         commit_message: "Adding commit ${{CF_SHORT_REVISION}} from ${{CF_REPO_NAME}}"
         git_user_name: "${{CF_COMMIT_AUTHOR}}"
-        working_directory: /codefresh/volume/argocd-production
+        working_directory: /codefresh/volume/gitpod-production
       stage: deploy
     github_pr:
       title: Creating a pull request
@@ -77,7 +77,7 @@ spec:
       arguments:
         GITHUB_TOKEN: "${{GITHUB_TOKEN}}"
         GITHUB_REPO_OWNER: "${{CF_REPO_OWNER}}"
-        GITHUB_REPO_NAME: argocd-production
+        GITHUB_REPO_NAME: gitpod-production
         HEAD: "${{CF_REPO_NAME}}-${{CF_SHORT_REVISION}}"
         TITLE: "${{CF_SHORT_REVISION}} from ${{CF_REPO_NAME}}"
         BASE: master
