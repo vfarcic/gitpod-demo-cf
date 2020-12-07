@@ -2,6 +2,10 @@
 
 # [The DevOps Toolkit Series](http://www.devopstoolkitseries.com)
 
+Following assumptions are made:
+
+* Your Codefresh account is already configured with integration with Docker Hub registry named `docker-hub`.
+
 When using through **Gitpod**, make sure that the following environment variables are created:
 
 * CF_TOKEN: Codefresh token
