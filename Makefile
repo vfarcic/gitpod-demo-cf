@@ -10,7 +10,8 @@ init:
 	cat codefresh-master.yml | sed -e "s@CHANGE_ME_REPO@${GH_REPO}@g" | tee codefresh-master.yml
 	cat codefresh-master.yml | sed -e "s@CHANGE_ME_DH_USER@${DH_USER}@g" | tee codefresh-master.yml
 	cat codefresh-master.yml | sed -e "s@CHANGE_ME_PROD_REPO@${PROD_REPO}@g" | tee codefresh-master.yml
-	cat production.yaml | sed -e "s@CHANGE_ME_PROD_REPO@${PROD_REPO}@g" | tee production.yaml
+	git config --get remote.origin.url
+	cat production.yaml | sed -e "s@CHANGE_ME_REPO@${GH_REPO}@g" | tee production.yaml
 	-codefresh create pipeline -f codefresh-master.yml
 
 build:
