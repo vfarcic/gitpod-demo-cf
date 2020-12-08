@@ -8,7 +8,7 @@ Following assumptions are made:
 
 When using through **Gitpod**, make sure that the following environment variables are created:
 
-* CF_TOKEN: Codefresh token
-* GH_TOKEN: Github token
-* DH_USER: Dockerhub username
-* PROD_REPO: Production repository in the format [USER]/[REPO] (e.g., `devopsparadox/gitpod-production`)
+* *CF_TOKEN* with the Codefresh token (visit [Codefresh: Create Tokens](https://codefresh-io.github.io/cli/tokens/create-tokens/) if you do not have one)
+* *GH_TOKEN* with the GitHub token (visit [GitHub: Creating a personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) if you do not have one)
+* *DH_USER* with the Docker Hub user
+* *PROD_REPO* with the Argo CD production repository and in the format [USER]/[REPO] (e.g., `vfarcic/gitpod-production`)
