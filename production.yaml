@@ -9,7 +9,7 @@ spec:
   project: production
   source:
     path: helm
-    repoURL: https://github.com/vfarcic/gitpod-demo-cf.git
+    repoURL: https://github.com/CHANGE_ME_REPO.git
     targetRevision: HEAD
     helm:
       values: |
